@@ -7,7 +7,7 @@ from contact import models
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'first_name', 'last_name', 'phone',
+        'id', 'first_name', 'last_name', 'phone', 'show',
     )
 
     ordering = (
@@ -25,6 +25,16 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 200
 
     #Modifica os campos selecionados para edição já na exibição do contato: Cuidado
-    list_editable = ('phone',)
+    list_editable = ('first_name', 'last_name', 'phone', 'show',)
 
-    list_display_links = ('id', 'first_name',)
+    list_display_links = ('id',)
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+    )
+
+    ordering = (
+        'id',
+    )
