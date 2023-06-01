@@ -6,10 +6,8 @@ from django.contrib.auth.models import User
 #id (primary key - automático)
 #first_name (String), last_name (String), phone (String), email (email),
 #created_date (date), description (text)
-
 #category (foreign key), show (boolean), picture (image)
 # owner (foreign key)
-
 #Category (Foreignkey)
 class Category(models.Model):
     class Meta:

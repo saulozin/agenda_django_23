@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 def index(request):
     contacts = Contact.objects.filter(show=True).order_by('id')
 
-    paginator = Paginator(contacts, 2)
+    paginator = Paginator(contacts, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
@@ -37,7 +37,7 @@ def search(request):
         Q(email__icontains=search_value)
     ).order_by('id')
 
-    paginator = Paginator(contacts, 2)
+    paginator = Paginator(contacts, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
